@@ -1,0 +1,6 @@
+﻿# names of the nodes
+a  b  c  d  e
+
+
+# nothing is reachable
+# 5 connected components

@@ -1,0 +1,8 @@
+﻿# longer names
+sean madison judah lou bryce lauren
+
+# edges
+lou judah
+
+madison lauren
+lauren sean
