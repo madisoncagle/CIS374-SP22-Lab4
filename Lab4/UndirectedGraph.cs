@@ -101,8 +101,6 @@ namespace Lab4
 			return node;
         }
 
-
-		// TODO
 		public bool IsReachable(string node1name, string node2name)
         {
 			// find the 2 node objects
@@ -120,7 +118,11 @@ namespace Lab4
 
             Console.WriteLine("result: " + result);
 
-			return node2.Color != Color.White;
+			//return node2.Color != Color.White;
+
+			ResetNodeColor();
+
+			return result;
         }
 
 		protected bool IsReachableExplore(Node currentNode, Node endingNode)
@@ -148,6 +150,64 @@ namespace Lab4
 
 			return false;
 		}
+
+
+		// TODO
+		/**
+         * <summary> Returns the number of connecxted components in the graph .</summary>
+         */
+		public int ConnectedComponents
+		{
+			get
+			{
+				int connectedComponents = 0;
+
+				// for all the nodes
+				//     if node is white
+				//        connectedComponents++
+				//        explore the neighbors
+				//        
+
+
+
+				return connectedComponents;
+			}
+		}
+
+		// TODO
+		/**
+		 *  <summary> Returns a predessor dictionary with the DFS paths starting DFS 
+		 *  at the given starting node</summary>
+		 */
+		public Dictionary<Node, Node> DFS(Node startingNode)
+		{
+			Dictionary<Node, Node> predecessorDictionary = new Dictionary<Node, Node>();
+
+			
+
+			return predecessorDictionary;
+		}
+
+		// TODO
+		private void DFSVisit(Node node, Dictionary<Node, Node> pred)
+		{
+			
+		}
+
+
+		// TODO
+		/**
+		 *  <summary> Returns a predessor dictionary with the BFS paths starting BFS 
+		 *  at the given starting node</summary>
+		 */
+		public Dictionary<Node, (Node pred, int dist)> BFS(Node startingNode)
+		{
+			var predecessorDictionary = new Dictionary<Node, (Node pred, int dist)>();
+
+			
+			return predecessorDictionary;
+		}
+
 
 		public void ResetNodeColor()
 		{
