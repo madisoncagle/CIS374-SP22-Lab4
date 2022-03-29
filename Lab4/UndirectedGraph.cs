@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
+
 namespace Lab4
 {
 	public class UndirectedGraph
@@ -179,10 +180,16 @@ namespace Lab4
 		 *  <summary> Returns a predessor dictionary with the DFS paths starting DFS 
 		 *  at the given starting node</summary>
 		 */
+
 		public Dictionary<Node, Node> DFS(Node startingNode)
 		{
 			Dictionary<Node, Node> predecessorDictionary = new Dictionary<Node, Node>();
 
+			// foreach v in V do
+			//    pred[v] = -1
+			//    color[v] = white
+			//    
+			// dfsVisit(startingNode)
 			
 
 			return predecessorDictionary;
@@ -191,7 +198,14 @@ namespace Lab4
 		// TODO
 		private void DFSVisit(Node node, Dictionary<Node, Node> pred)
 		{
-			
+			// color[node] = gray
+			// foreach neighbor v of node
+			//    if color[v] = white then
+			//        pred[v] = node
+			//        dfsVisit(v, pred)
+            // color[node] = black
+
+
 		}
 
 
@@ -203,6 +217,30 @@ namespace Lab4
 		public Dictionary<Node, (Node pred, int dist)> BFS(Node startingNode)
 		{
 			var predecessorDictionary = new Dictionary<Node, (Node pred, int dist)>();
+			Queue<Node> queue = new Queue<Node>();
+
+			// init
+			// foreach v in V do
+			//    pred[v] = -1
+			//    dist[v] = infinity
+			//    color[v] = white
+
+			// startingNode.color = gray
+			// dist[startingNode] = 0
+
+			// queue = empty Queue
+			// queuue.enqueue(startingNode)
+
+			// while( queue is not empty ) do
+			//   u = head(Q)
+			//   foreach neighbor v of u do
+			//      if v.color = white then
+			//        dist[v] = dist[u] + 1
+			//        pred[v] = u
+			//        color[v] = gray
+			//        enqueue(v)
+			//   queue.dequeue()
+			//   color[u] = black
 
 			
 			return predecessorDictionary;
