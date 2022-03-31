@@ -161,7 +161,14 @@ namespace Lab4
                 //     if node is white
                 //        connectedComponents++
                 //        explore the neighbors
-
+                foreach (Node n in Nodes)
+                {
+                    if (n.Color == Color.White)
+                    {
+                        connectedComponents++;
+                        DFSVisit(n, new Dictionary<Node, Node>());
+                    }
+                }
 
                 return connectedComponents;
             }
@@ -213,17 +220,18 @@ namespace Lab4
 
             foreach (Node n in Nodes)
             {
-                predDict[n] = (null, -1); // ??
+                predDict[n] = (null, -1); // infinity is a double?
                 n.Color = Color.White;
             }
 
             start.Color = Color.Gray;
-            predDict[start] = (null, 0); // dist[start] = 0; ??
+            predDict[start] = (null, 0); // dist[start] = 0
             queue.Enqueue(start);
 
             while (queue.Count != 0)
             {
-                var u = queue.Peek();
+                //var u = queue.Peek();
+                var u = queue.Dequeue();
 
                 foreach (Node n in u.Neighbors)
                 {
@@ -235,7 +243,7 @@ namespace Lab4
                     }
                 }
 
-                queue.Dequeue();
+                //queue.Dequeue();
 
                 u.Color = Color.Black;
             }
@@ -257,16 +265,19 @@ namespace Lab4
 
             foreach (Node node in Nodes)
             {
-                str += node.Name;
-                str += " has neighbors: ";
+                str += $"{node.Name} has neighbors: ";
+
+                List<string> neighborNames = new List<string>();
 
                 foreach (Node neighbor in node.Neighbors)
                 {
-                    str += neighbor.Name;
-                    str += ", ";
+                    //str += neighbor.Name;
+                    //str += ", ";
+                    neighborNames.Add(neighbor.Name);
                 }
 
-                str += ".";
+                //str += ".";
+                str += string.Join(", ", neighborNames);
                 str += Environment.NewLine;
 
             }
