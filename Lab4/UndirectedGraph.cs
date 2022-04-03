@@ -147,7 +147,6 @@ namespace Lab4
             return false;
         }
 
-        // TODO
         /**
          * <summary> Returns the number of connecxted components in the graph </summary>
          */
@@ -157,10 +156,6 @@ namespace Lab4
             {
                 int connectedComponents = 0;
 
-                // for all the nodes
-                //     if node is white
-                //        connectedComponents++
-                //        explore the neighbors
                 foreach (Node n in Nodes)
                 {
                     if (n.Color == Color.White)
@@ -230,7 +225,6 @@ namespace Lab4
 
             while (queue.Count != 0)
             {
-                //var u = queue.Peek();
                 var u = queue.Dequeue();
 
                 foreach (Node n in u.Neighbors)
@@ -242,8 +236,6 @@ namespace Lab4
                         queue.Enqueue(n);
                     }
                 }
-
-                //queue.Dequeue();
 
                 u.Color = Color.Black;
             }
@@ -271,12 +263,9 @@ namespace Lab4
 
                 foreach (Node neighbor in node.Neighbors)
                 {
-                    //str += neighbor.Name;
-                    //str += ", ";
                     neighborNames.Add(neighbor.Name);
                 }
 
-                //str += ".";
                 str += string.Join(", ", neighborNames);
                 str += Environment.NewLine;
 
